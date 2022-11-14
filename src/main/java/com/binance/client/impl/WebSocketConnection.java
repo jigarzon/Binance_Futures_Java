@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.binance.client.constant.BinanceApiConstants;
 import com.binance.client.exception.BinanceApiException;
 import com.binance.client.impl.utils.JsonWrapper;
-
+@SuppressWarnings("rawtypes")
 public class WebSocketConnection extends WebSocketListener {
 
     private static final Logger log = LoggerFactory.getLogger(WebSocketConnection.class);

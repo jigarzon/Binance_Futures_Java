@@ -14,6 +14,7 @@ import java.util.LinkedHashMap;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
+@SuppressWarnings("rawtypes")
 public class UrlParamsBuilder {
 
     class ParamsMap {
