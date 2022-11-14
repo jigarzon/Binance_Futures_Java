@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.binance.sdk</groupId>
-    <artifactId>binance-client</artifactId>
-    <version>1.0.9-GARZUS-SNAPSHOT</version>
+    <artifactId>binance-client-garzus</artifactId>
+    <version>1.0.9-SNAPSHOT</version>
 
     <properties>
         <java.version>19</java.version>
