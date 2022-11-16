@@ -5,7 +5,7 @@
 
     <groupId>com.binance.sdk</groupId>
     <artifactId>binance-client-garzus</artifactId>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.10-SNAPSHOT</version>
 
     <properties>
         <java.version>18</java.version>
