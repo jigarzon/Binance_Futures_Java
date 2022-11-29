@@ -32,7 +32,6 @@ class RestApiRequestImpl {
     }
 
     private Request createRequestByGet(String address, UrlParamsBuilder builder) {
-        System.out.println(serverUrl);
         return createRequestByGet(serverUrl, address, builder);
     }
 
@@ -42,7 +41,6 @@ class RestApiRequestImpl {
 
     private Request createRequest(String url, String address, UrlParamsBuilder builder) {
         String requestUrl = url + address;
-        System.out.print(requestUrl);
         if (builder != null) {
             if (builder.hasPostParam()) {
                 return new Request.Builder().url(requestUrl).post(builder.buildPostBody())
@@ -607,7 +605,7 @@ class RestApiRequestImpl {
 
     RestApiRequest<Order> postOrder(String symbol, OrderSide side, PositionSide positionSide, OrderType orderType,
             TimeInForce timeInForce, String quantity, String price, String reduceOnly,
-            String newClientOrderId, String stopPrice, WorkingType workingType, NewOrderRespType newOrderRespType) {
+            String newClientOrderId, String stopPrice, String closePosition, WorkingType workingType, NewOrderRespType newOrderRespType) {
         RestApiRequest<Order> request = new RestApiRequest<>();
         UrlParamsBuilder builder = UrlParamsBuilder.build()
                 .putToUrl("symbol", symbol)
@@ -619,6 +617,7 @@ class RestApiRequestImpl {
                 .putToUrl("price", price)
                 .putToUrl("reduceOnly", reduceOnly)
                 .putToUrl("newClientOrderId", newClientOrderId)
+                .putToUrl("closePosition", closePosition)
                 .putToUrl("stopPrice", stopPrice)
                 .putToUrl("workingType", workingType)
                 .putToUrl("newOrderRespType", newOrderRespType);
