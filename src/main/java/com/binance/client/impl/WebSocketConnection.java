@@ -37,15 +37,17 @@ public class WebSocketConnection extends WebSocketListener {
     private String subscriptionUrl = BinanceApiConstants.WS_API_BASE_URL;
 
     WebSocketConnection(WebsocketRequest request,
-            WebSocketWatchDog watchDog) {
-        this(request, watchDog, false);
+            WebSocketWatchDog watchDog, String url) {
+        this(request, watchDog, false, url);
     }
 
-    WebSocketConnection(WebsocketRequest request, WebSocketWatchDog watchDog, boolean autoClose) {
+    WebSocketConnection(WebsocketRequest request, WebSocketWatchDog watchDog, boolean autoClose, String url) {
         this.connectionId = WebSocketConnection.connectionCounter++;
         this.request = request;
         this.autoClose = autoClose;
-
+        if (url != null) {
+            subscriptionUrl = url;
+        }
         this.okhttpRequest = request.authHandler == null ? new Request.Builder().url(subscriptionUrl).build()
                 : new Request.Builder().url(subscriptionUrl).build();
         this.watchDog = watchDog;
